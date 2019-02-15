@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta http-equiv="Pragma" content="no-cache"></meta>
+<meta http-equiv="Cache-Control" content="no-cache"></meta>
+<meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT"></meta>
+
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css" 
+           xlmns:th="http:/www.thymeleaf.org" rel="stylesheet"></link>
+           
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.css" 
+           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}" rel="stylesheet" />             
+           
+<link href="css/style.css" th:href="@{css/style.css}"  rel="stylesheet"></link>
+<link href="css/Login.css" th:href="@{css/login.css}"  rel="stylesheet"></link>
+<link href="css/sidebar.css" th:href="@{css/sidebar.css}" rel="stylesheet"></link>
+
+<title>WongShitong's Library|Reservation</title>
+</head>
+<body>
+
+     <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" th:href="@{/}">
+	                    <img th:src="@{images/loop.png}" />
+	                </a>
+			        </div> 
+			
+			        <!-- Collect the nav links, forms, and other content for toggling -->
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			          <ul class="nav navbar-nav">
+			            <li>
+			            	<a href="/home" th:href="@{/home}">Home</a>
+			            </li>
+			            <li >
+			            	<a href="/memhome" th:href="@{/memhome}">Member</a>
+			            </li>
+			            <li >
+			            	<a href="#" th:href="@{#}">Lend</a>
+			            </li>
+			            <li class="active">
+			            	<a href="#" th:href="@{#}">Reserve</a>
+			            </li>
+			            <li >
+			            	<a href="/adminhome" th:href="@{/adminhome}">Admin</a>
+			            </li>
+			          </ul>
+			
+			          <ul class="nav navbar-nav navbar-right">
+			        		<li><a href="/login" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			          </ul>
+			          
+			        </div>
+			        <!-- /.navbar-collapse -->
+			      </div>
+			      <!-- /.container-fluid -->    
+             </nav>
+	 
+			 <!-- Form -->
+		    <div class="col-sm-10 text-left"> 
+		         
+		         <h1>Check Form</h1>
+		         <div class="col-sm-6 col-sm-offset-4 center-block pull-none bar">   
+                   <form th:action="@{/addbook}"  method="post" th:object="${s}">
+					     <div class="form-group">
+							    <label for="mid">Book Id:</label>
+							    <input type="text" class="form-control" id="mid" th:field="*{bookId}"></input>
+							 </div>
+							 
+					         <button type="submit" class="btn btn-default" style = "background-color: #00FFFF;">Check</button>
+					         <button type="reset"  class="btn btn-default" value="Reset"  style = "background-color: #ff0011;">Reset</button>
+					         
+                  </form>
+               </div>
+              </div>		    
+
+</body>
+</html>

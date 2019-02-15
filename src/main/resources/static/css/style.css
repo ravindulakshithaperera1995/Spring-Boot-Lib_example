@@ -1,0 +1,79 @@
+.invisible-at-first {
+	display: none;
+}
+
+{
+    font-size: 56px;
+}
+
+body,
+html {
+  background: url(C:\Users\ADMIN\Desktop\Mage's_book_detail) center center no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+div.jumbotron {
+  background-image: url(http://placehold.it/1350x550/f00/f00);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+
+.jumbotron {
+  min-width: 1085px;
+  min-height: 585px;
+  margin: 10px auto;
+  display: flex;
+  align-content:center;
+  justify-items:center;
+  align-items:center;
+  justify-content: center;
+  margin: 10px 10px 10px 10px;
+  border: 0.08em solid black;
+  background-color: grey;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-default>.panel-body {
+	background-color: #FFD700;
+	font-family: Verdana, sans-serif;
+	
+}
+
+.panel-danger>.panel-heading {
+	background-color: #a11212;
+	font-family: Verdana, sans-serif;
+}
+
+.panel-danger{
+	width: 250px;
+	height:300px;
+}
+
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+th{
+	background-color: #a11212;
+}

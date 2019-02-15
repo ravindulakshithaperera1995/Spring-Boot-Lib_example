@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>WongShitong's Library|Admin</title>
+</head>
+
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css" 
+           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+           
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.css" 
+           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}" rel="stylesheet" />                                         
+           
+<link href="css/style1.css" th:href="@{css/style1.css}" rel="stylesheet" />
+<link href="css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
+<link href="css/sidebar.css" th:href="@{css/sidebar.css}" rel="stylesheet" />
+
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+			        <div class="navbar-header">
+			          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			          </button>
+			          <a class="navbar-brand" th:href="@{/}">
+	                    <img th:src="@{images/loop.png}" />
+	                </a>
+			        </div> 
+			
+			        <!-- Collect the nav links, forms, and other content for toggling -->
+			        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			          <ul class="nav navbar-nav">
+			            <li >
+			            	<a href="/home" th:href="@{/home}">Home</a>
+			            </li>
+			            <li>
+			            	<a href="/memhome" th:href="@{/memhome}">Member</a>
+			            </li>
+			            <li >
+			            	<a href="/check1" th:href="@{/check1}">Lend</a>
+			            </li>
+			            <li >
+			            	<a href="/check" th:href="@{/check}">Reserve</a>
+			            </li>
+			            <li class="active">
+			            	<a href="/adminhome" th:href="@{/adminhome}">Admin</a>
+			            </li>
+			          </ul>
+			
+			          <ul class="nav navbar-nav navbar-right">
+			        		<li><a href="/login" th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			          </ul>
+			          
+			        </div>
+			        <!-- /.navbar-collapse -->
+			      </div>
+			      <!-- /.container-fluid -->    
+             </nav>
+  	
+	<div class="modal-body row vertical-center">
+		
+		<div class="col-md-3 " >
+		     <!-- The sidebar -->
+             <div class="well sidebar-nav">
+	     		<ul class="nav nav-list">
+        		<li class="nav-header">Member</li>
+        			<li><a th:href="@{/home}">Home</a></li>
+        			<li><a th:href="@{/adregister}">Register Member</a></li>
+        			<li><a th:href="@{/adbook}">Register Book</a></li>
+        			<li><a th:href="@{/check1}">Lend</a></li>
+        			<li><a th:href="@{/check}">Reserve Book</a></li>
+        			<li><a th:href="@{/booklist}">View Book </a></li>
+        			<li><a th:href="@{/memberlist}">View Member</a></li>
+        			<li><a th:href="@{/reservelist}">View Reserves</a></li>
+        			<li><a th:href="@{/readfiledata}">Read</a></li>
+        			
+    			</ul>
+    	    </div>
+  		</div>
+  	
+	
+	     <div class="col-md-9">
+            <div class="col-lg-3">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+
+							<h3 class="panel-title">
+								<span class="glyphicon glyphicon-user"></span> <a
+									href="#" th:href="@{#}">Member</a>
+							</h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="panel panel-default">
+									<strong>Total : <font size="6" th:text="${count1}"></font></strong>
+									<ul>
+										<li>
+											<a href="/memberlist" th:href="@{/memberlist}">Member List</a>
+										</li>
+										<li>
+											<a href="/adregister" th:href="@{/adregister}">Register</a>
+										</li>
+										<li>
+											<a href="/adsearchmem" th:href="@{/adsearchmember}">Search Member</a>
+										</li>
+										<li>
+											<a href="/addelete" th:href="@{/addelete}"  style = "background-color: #ff0011;">Delete Member</a>
+										</li>
+								    </ul>
+					         </div>
+                        </div>
+					</div>
+				</div>
+				
+                <div class="col-lg-3">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+
+							<h3 class="panel-title">
+								<span class="glyphicon glyphicon-book"></span> <a
+									href="#" th:href="@{#}">Book</a>
+							</h3>
+
+						</div>
+
+						<div class="panel-body">
+						    <div class="panel panel-default">
+						            <strong>Total :  <font size="6" th:text="${count2}"></font></strong>
+						        	<ul>
+										<li>
+											<a href="/booklist" th:href="@{/booklist}">BookList</a>
+										</li>
+										<li>
+											<a href="/adbook" th:href="@{/adbook}">Add Book</a>
+										</li>
+										<li>
+											<a href="/adsearchbook" th:href="@{/adsearchbook}">Search Book</a>
+										</li>
+								    </ul>
+						        </div>
+								
+						   </div>
+						</div>
+					</div>
+					
+					<div class="col-lg-3">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+
+							<h3 class="panel-title">
+								<span class="glyphicon glyphicon-bookmark"></span> <a
+									href="/chart1" th:href="@{/chart1}">Reserve/Lend</a>
+							</h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="panel panel-default">
+							        <div class="col-md-6">
+							        	<strong>Total : <font size="6" th:text="${count}"></font></strong>
+							        	<ul>
+										<h3>Lend</h3>
+										<strong class="text-center"><font size="6"
+											th:text="${count3}"></font></strong>
+		
+										<h3>Reserve</h3>
+										<strong class="text-center"><font size="6"
+											th:text="${count4}"></font></strong>
+		
+								        </ul>
+							        </div>
+									
+									<div class="col-md-6">
+									    <ul>
+									        <li>
+												<a href="/reservelist" th:href="@{/reservelist}">Total</a>
+											</li>
+									    	<li>
+												<a href="/lendlist" th:href="@{/lendlist}">Lend List</a>
+											</li>
+											<li>
+												<a href="/rlist" th:href="@{/rlist}">Reserve List</a>
+											</li>
+									    </ul>
+								   </div>
+					         </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	   
+</body>
+</html>
